@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>timer</title>
+    <link rel="stylesheet" href="タイマー.css">
+
+
+
+</head>
+
+
+<body>
+    <div class="container">
+        <p id="timer">00:00:00</p>
+
+        <div>
+            <button id="start_stop" class="btn btn-lg btn-primary">
+                START
+            </button>
+        </div>
+    </div>
+
+    <script>
+        //0をついか
+        var addZero = function (value) {
+            if (value < 10) {
+                value = '0' + value;//0から9の間まで
+            } return value;
+        }
+
+        document.getElementById('start_stop').addEventListener('click',
+            function () {
+
+
+
+                var now = new Date();
+                var seconds = now.getSeconds();//秒を取得
+                seconds = addZero(seconds)
+
+
+
+                var minutes = now.getMinutes();
+                seconds = addZero(seconds)
+
+
+
+                var hours = now.getHours();
+                houra = addZero(hours)
+
+                document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
+            } );
+
+
+
+
+
+    </script>
+</body>
+
+</html>
